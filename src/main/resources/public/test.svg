@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <rect x="0" y="0" width="200" height="180" fill="#EEE"></rect>
+    <text x="10" y="25" font-family="Verdana" font-size="15" fill="#099">INT.PRD_SVC_INSEE</text>
+    <text x="10" y="40" font-family="Verdana" font-size="10" fill="black">BIGINT : ID [PK]</text>
+    <text x="10" y="55" font-family="Verdana" font-size="10" fill="black">VARCHAR : CODE</text>
+    <text x="10" y="70" font-family="Verdana" font-size="10" fill="black">VARCHAR : NAME</text>
+    <text x="10" y="85" font-family="Verdana" font-size="10" fill="black">VARCHAR : SURNAME</text>
+    <text x="10" y="100" font-family="Verdana" font-size="10" fill="black">VARCHAR : ADRESS</text>
+    <text x="10" y="115" font-family="Verdana" font-size="10" fill="black">INT : ZIP</text>
+    <text x="10" y="130" font-family="Verdana" font-size="10" fill="black">VARCHAR : CITY</text>
+    <text x="10" y="145" font-family="Verdana" font-size="10" fill="black">VARCHAR : COUNTRY</text>
+    <text x="10" y="160" font-family="Verdana" font-size="10" fill="black">BIGINT : SCORE</text>
+  </g>
+</svg>
