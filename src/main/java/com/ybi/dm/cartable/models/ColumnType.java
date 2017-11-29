@@ -1,4 +1,4 @@
-package models;
+package com.ybi.dm.cartable.models;
 
 /**
  * Created by Bouddha on 26/11/2017.
