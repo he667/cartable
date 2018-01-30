@@ -3,6 +3,11 @@ package com.ybi.dm.cartable.models;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 /**
  * Created by Bouddha on 26/11/2017.
@@ -121,6 +126,5 @@ public class Table {
     public void setColumns(ArrayList<Column> rows) {
         this.columns = rows;
     }
-
 
 }

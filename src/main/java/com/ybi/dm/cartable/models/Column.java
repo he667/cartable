@@ -1,6 +1,5 @@
 package com.ybi.dm.cartable.models;
 
-import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 
 /**

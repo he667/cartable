@@ -60,6 +60,7 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+<<<<<<< HEAD
 
         <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.jsoup/jsoup &ndash;&gt;-->
         <!--<dependency>-->
@@ -74,5 +75,7 @@
             <version>4.3</version>
         </dependency>
 
+=======
+>>>>>>> 0c8c0accc3402364ff6bea7ac2ffe9bce2ce44b0
     </dependencies>
 </project>

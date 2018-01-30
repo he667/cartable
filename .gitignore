@@ -24,4 +24,10 @@ hs_err_pid*
 *.iml
 .idea
 target
+<<<<<<< HEAD
 test.odb
+=======
+
+#database
+*.odb
+>>>>>>> 0c8c0accc3402364ff6bea7ac2ffe9bce2ce44b0
