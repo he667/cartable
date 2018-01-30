@@ -1,10 +1,8 @@
 package com.ybi.dm.cartable.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import java.time.LocalDateTime;
+import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Bouddha on 26/11/2017.
@@ -21,8 +19,12 @@ public class Table {
     private String description;
     private long creation;
     private long updated;
+    private String status;
+    private ArrayList<Metrics> metrics;
     private String version;
 
+    @OneToMany(cascade=CascadeType.ALL) @OrderBy("position")
+    private List<Column> columns;
 
     public long getId() {
         return id;
@@ -47,10 +49,6 @@ public class Table {
     public void setUpdated(long updated) {
         this.updated = updated;
     }
-
-    private String status;
-
-    private ArrayList<Metrics> metrics;
 
     public String getName() {
         return name;
@@ -116,13 +114,13 @@ public class Table {
         this.metrics = metrics;
     }
 
-    public ArrayList<Column> getRows() {
-        return rows;
+    public List<Column> getColumns() {
+        return columns;
     }
 
-    public void setRows(ArrayList<Column> rows) {
-        this.rows = rows;
+    public void setColumns(ArrayList<Column> rows) {
+        this.columns = rows;
     }
 
-    private ArrayList<Column> rows;
+
 }

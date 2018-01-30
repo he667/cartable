@@ -1,5 +1,7 @@
 package com.ybi.dm.cartable;
 
+import com.ybi.dm.cartable.models.Column;
+import com.ybi.dm.cartable.models.ColumnType;
 import com.ybi.dm.cartable.models.Table;
 import org.junit.Test;
 
@@ -47,11 +49,52 @@ public class DBTest {
         long count = em.createQuery("SELECT count(t) FROM Table t", Long.class).getSingleResult();
         System.out.println("Table Count " + count);
         Table table = em.createQuery("SELECT t FROM Table t", Table.class).setFirstResult(0).setMaxResults(1).getSingleResult();
-        System.out.println("Table Name " + table.getName());
+        System.out.println("Single Test Table Name " + table.getName());
         List<Table> tables = em.createQuery("SELECT t FROM Table t", Table.class).getResultList();
         for (Table t : tables) {
-            System.out.println("Table Name " + t.getName() + " - " + t.getId());
+            System.out.println("All Table Name " + t.getName() + " - " + t.getId());
+            for (Column col : t.getColumns()) {
+                System.out.println("All Table Name " + t.getName() + " - " + t.getId() + " - Col " + col.getName() + "@" + col.getPosition());
+            }
         }
         emf.close();
+    }
+
+    @Test
+    public void testModel() {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("e:/coding/java/Workspace/cartable/test.odb");
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        Table table = new Table();
+        table.setName("PRD_SVC_INSEE");
+        table.setSchema("INT");
+        table.setVersion("1.0");
+        table.setLocation("Phoenix");
+        table.setStatus("active");
+
+        Column col = new Column();
+        col.setName("ID");
+        col.setType(ColumnType.BIGINT);
+        col.setPrimary(true);
+        col.setPosition(1);
+        col.setNullable(false);
+
+        ArrayList<Column> columns = new ArrayList<>();
+        columns.add(col);
+
+        table.setColumns(columns);
+        em.persist(table);
+        em.getTransaction().commit();
+        emf.close();
+//                INT.PRD_SVC_INSEE
+//                BIGINT : ID [PK]
+//                VARCHAR : CODE
+//                VARCHAR : NAME
+//                VARCHAR : SURNAME
+//                VARCHAR : ADRESS
+//                INT : ZIP
+//                VARCHAR : CITY
+//                VARCHAR : COUNTRY
+//                BIGINT : SCORE
     }
 }
