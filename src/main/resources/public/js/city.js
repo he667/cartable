@@ -9,7 +9,7 @@ cytoscape({
     .selector('#l')
       .css({
         'width' : 200,
-        'height' : 180,
+        //'height' : 180,
         'background-image': '/testx.svg',
         'margin':'0 auto',
         'display':'block',
